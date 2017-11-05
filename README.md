@@ -17,3 +17,37 @@ Github and install it manually:
     python setup.py install
 
 Python 2.7, 3.5 and 3.6, is supported for now.
+
+## Usage
+
+    from hurriyet.api import Api
+    api_key = ""
+    api = Api(api_key)
+
+### Article
+
+##### Article list
+
+A list of all articles.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| article_id  | The article’s ID.  | optional |
+| modified_date  | The article’s modified date.  | optional |
+| path  | The article’s path.  | optional |
+| top  | Filters the number of records in the returned result set.  | optional |
+| skip  | Skip the desired record from the result set.  | optional |
+
+
+    api.article.all()
+
+##### Show get
+
+Retrieve information for a given article.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| article_id  | The article’s ID.  | required |
+
+
+    api.article.get("40199111")
