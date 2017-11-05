@@ -8,7 +8,7 @@ class Api(object):
 
     def __init__(self, api_key, **kwargs):
         """
-        Unsplash Api Instance Constructor
+        Hurriyet Api Instance Constructor
 
         :param api_key: Api Key
         :param kwargs:
