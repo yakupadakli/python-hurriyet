@@ -1,4 +1,4 @@
-from hurriyet.generic import BaseClient
+from hurriyet.base import BaseClient
 from hurriyet.models import NewsVideo as NewsVideoModel
 
 

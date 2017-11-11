@@ -43,3 +43,7 @@ class MetaDataNotFound(NotFound):
 
 class NewsVideoNotFound(NotFound):
     message = six.text_type(u"News Video Not Found")
+
+
+class PageNotFound(NotFound):
+    message = six.text_type(u"Page Not Found")

@@ -109,3 +109,11 @@ class NewsVideo(Model):
             news_video.files = File.parse_list(news_video.files, sub_item=True)
 
         return news_video
+
+
+class Page(Model):
+    _not_found_error_class = errors.PageNotFound
+
+    def __init__(self, **kwargs):
+        super(Page, self).__init__(**kwargs)
+        self._repr_values = {"id": "ID", "title": "Title"}
