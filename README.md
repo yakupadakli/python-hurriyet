@@ -51,3 +51,33 @@ Retrieve information for a given article.
 
 
     api.article.get("40199111")
+
+
+### Column
+
+##### Column list
+
+A list of all columns.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| column_id  | The column’s ID.  | optional |
+| writer_id  | The writer’s ID.  | optional |
+| modified_date  | The column’s modified date.  | optional |
+| path  | The column’s path.  | optional |
+| top  | Filters the number of records in the returned result set.  | optional |
+| skip  | Skip the desired record from the result set.  | optional |
+
+
+    api.column.all()
+
+##### Column get
+
+Retrieve information for a given column.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| column_id  | The column’s ID.  | required |
+
+
+    api.column.get("40190106")
