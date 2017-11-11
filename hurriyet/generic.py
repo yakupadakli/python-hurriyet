@@ -1,32 +1,20 @@
-from hurriyet.generic import BaseClient
+from datetime import datetime
+
+from hurriyet.client import Client
 from hurriyet.models import Column as ColumnModel
 
 
-class Column(BaseClient):
-    """Hurriyet column operations."""
+class BaseClient(Client):
 
     def __init__(self, **kwargs):
-        super(Column, self).__init__(**kwargs)
-        self.model_class = ColumnModel
-        self.base_url = "/columns"
+        super(BaseClient, self).__init__(**kwargs)
+        self.model_class = None
+        self.base_url = None
 
-    def all(self, column_id=None, modified_date=None, path=None, top=None, skip=None, **kwargs):
-        """
-        Get list of columns.
-
-        :return [Columns]: The Hurriyet Columns.
-        """
+    def all(self, item_id=None, modified_date=None, path=None, top=None, skip=None, **kwargs):
         filter_data = None
-        if column_id:
-            filter_data = "Id eq '%s'" % column_id
-
-        writer_id = kwargs.get("writer_id")
-        if writer_id:
-            data = "WriterId eq '%s'" % writer_id
-            if filter_data:
-                filter_data += ' and %s' % data
-            else:
-                filter_data = data
+        if item_id:
+            filter_data = "Id eq '%s'" % item_id
 
         if modified_date:
             modified_date = datetime.strftime(modified_date, "%Y-%m-%dT%H:%M:%SZ")
@@ -47,3 +35,8 @@ class Column(BaseClient):
         url = self.base_url
         result = self._get(url, params=params)
         return self.model_class.parse_list(result)
+
+    def get(self, item_id):
+        url = "%s/%s" % (self.base_url, item_id)
+        result = self._get(url)
+        return self.model_class.parse(result)
