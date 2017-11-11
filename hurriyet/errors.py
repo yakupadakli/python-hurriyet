@@ -23,3 +23,19 @@ class NotFound(HurriyetError):
 
 class ArticleNotFound(NotFound):
     message = six.text_type(u"Article Not Found")
+
+
+class ColumnNotFound(NotFound):
+    message = six.text_type(u"Column Not Found")
+
+
+class NewsPhotoGalleryNotFound(NotFound):
+    message = six.text_type(u"News Photo Gallery Not Found")
+
+
+class FileNotFound(NotFound):
+    message = six.text_type(u"File Not Found")
+
+
+class MetaDataNotFound(NotFound):
+    message = six.text_type(u"Meta Data Not Found")
