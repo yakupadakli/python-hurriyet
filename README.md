@@ -81,3 +81,32 @@ Retrieve information for a given column.
 
 
     api.column.get("40190106")
+
+
+### NewsPhotoGallery
+
+##### NewsPhotoGallery list
+
+A list of all news photo galleries.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| news_photo_gallery_id  | The news photo gallery’s ID.  | optional |
+| modified_date  | The news photo gallery’s modified date.  | optional |
+| path  | The news photo gallery’s path.  | optional |
+| top  | Filters the number of records in the returned result set.  | optional |
+| skip  | Skip the desired record from the result set.  | optional |
+
+
+    api.news_photo_gallery.all()
+
+##### NewsPhotoGallery get
+
+Retrieve information for a given news photo gallery.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| news_photo_gallery_id  | The news photo gallery’s ID.  | required |
+
+
+    api.news_photo_gallery.get("40190642")
