@@ -93,3 +93,19 @@ class MetaData(Model):
     def __init__(self, **kwargs):
         super(MetaData, self).__init__(**kwargs)
         self._repr_values = {"title": "Title"}
+
+
+class NewsVideo(Model):
+    _not_found_error_class = errors.NewsVideoNotFound
+
+    def __init__(self, **kwargs):
+        super(NewsVideo, self).__init__(**kwargs)
+        self._repr_values = {"id": "ID", "title": "Title"}
+
+    @classmethod
+    def parse(cls, data, sub_item=False):
+        news_video = super(NewsVideo, cls).parse(data, sub_item=sub_item)
+        if hasattr(news_video, "files"):
+            news_video.files = File.parse_list(news_video.files, sub_item=True)
+
+        return news_video

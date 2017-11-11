@@ -1,6 +1,7 @@
 from hurriyet.article import Article
 from hurriyet.column import Column
 from hurriyet.news_photo_gallery import NewsPhotoGallery
+from hurriyet.news_video import NewsVideo
 
 
 class Api(object):
@@ -55,3 +56,15 @@ class Api(object):
         get     : Single news photo gallery.
         """
         return NewsPhotoGallery(api=self)
+
+    @property
+    def news_video(self):
+        """
+        Hurriyet NewsVideo Operations
+
+        Available methods:
+
+        all     : All news videos.
+        get     : Single news video.
+        """
+        return NewsVideo(api=self)
