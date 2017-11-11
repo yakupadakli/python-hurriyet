@@ -1,4 +1,5 @@
 from hurriyet.article import Article
+from hurriyet.column import Column
 
 
 class Api(object):
@@ -29,3 +30,15 @@ class Api(object):
         get     : Single article.
         """
         return Article(api=self)
+
+    @property
+    def column(self):
+        """
+        Hurriyet Column Operations
+
+        Available methods:
+
+        all     : All columns.
+        get     : Single column.
+        """
+        return Column(api=self)

@@ -9,6 +9,7 @@ class Article(Client):
 
     def __init__(self, **kwargs):
         super(Article, self).__init__(**kwargs)
+        self.base_url = "/articles"
 
     def all(self, article_id=None, modified_date=None, path=None, top=None, skip=None):
         """
@@ -36,7 +37,7 @@ class Article(Client):
                 filter_data = data
 
         params = {"$filter": filter_data, "$top": top, "$skip": skip}
-        url = "/articles"
+        url = self.base_url
         result = self._get(url, params=params)
         return ArticleModel.parse_list(result)
 
@@ -46,6 +47,6 @@ class Article(Client):
 
         :return [Article]: The Hurriyet Article.
         """
-        url = "/articles/%s" % article_id
+        url = "%s/%s" % (self.base_url, article_id)
         result = self._get(url)
         return ArticleModel.parse(result)

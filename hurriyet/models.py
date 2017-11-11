@@ -45,3 +45,11 @@ class Article(Model):
     def __init__(self, **kwargs):
         super(Article, self).__init__(**kwargs)
         self._repr_values = {"id": "ID", "title": "Title"}
+
+
+class Column(Model):
+    _not_found_error_class = errors.ArticleNotFound
+
+    def __init__(self, **kwargs):
+        super(Column, self).__init__(**kwargs)
+        self._repr_values = {"id": "ID", "title": "Title"}
