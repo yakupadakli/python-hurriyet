@@ -193,3 +193,30 @@ Retrieve information for a given path.
 
 
     api.path.get("563cddcc67b0a934e44ee2d7")
+
+
+### Writer
+
+##### Writer list
+
+A list of all writers.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| writer_id  | The writer’s ID.  | optional |
+| top  | Filters the number of records in the returned result set.  | optional |
+| skip  | Skip the desired record from the result set.  | optional |
+
+
+    api.writer.all()
+
+##### Writer get
+
+Retrieve information for a given writer.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| writer_id  | The writer’s ID.  | required |
+
+
+    api.writer.get("57a8a3430f25441fb419c54a")
