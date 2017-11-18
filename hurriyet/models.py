@@ -117,3 +117,45 @@ class Page(Model):
     def __init__(self, **kwargs):
         super(Page, self).__init__(**kwargs)
         self._repr_values = {"id": "ID", "title": "Title"}
+
+    @classmethod
+    def parse(cls, data, sub_item=False):
+        page = super(Page, cls).parse(data, sub_item=sub_item)
+        if hasattr(page, "pagenews"):
+            page.pagenews = PageNews.parse_list(page.pagenews, sub_item=True)
+        if hasattr(page, "folder"):
+            page.folder = Folder.parse(page.folder, sub_item=True)
+
+        return page
+
+
+class PageNews(Model):
+    _not_found_error_class = errors.PageNewsNotFound
+
+    def __init__(self, **kwargs):
+        super(PageNews, self).__init__(**kwargs)
+        self._repr_values = {"id": "ID"}
+
+
+class Folder(Model):
+    _not_found_error_class = errors.FolderNotFound
+
+    def __init__(self, **kwargs):
+        super(Folder, self).__init__(**kwargs)
+        self._repr_values = {"id": "ID", "title": "Title"}
+
+    @classmethod
+    def parse(cls, data, sub_item=False):
+        folder = super(Folder, cls).parse(data, sub_item=sub_item)
+        if hasattr(folder, "files"):
+            folder.files = File.parse_list(folder.files, sub_item=True)
+
+        return folder
+
+
+class Path(Model):
+    _not_found_error_class = errors.PathNotFound
+
+    def __init__(self, **kwargs):
+        super(Path, self).__init__(**kwargs)
+        self._repr_values = {"id": "ID", "title": "Title"}

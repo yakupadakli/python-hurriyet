@@ -47,3 +47,15 @@ class NewsVideoNotFound(NotFound):
 
 class PageNotFound(NotFound):
     message = six.text_type(u"Page Not Found")
+
+
+class PageNewsNotFound(NotFound):
+    message = six.text_type(u"Page News Not Found")
+
+
+class FolderNotFound(NotFound):
+    message = six.text_type(u"Folder Not Found")
+
+
+class PathNotFound(NotFound):
+    message = six.text_type(u"Path Not Found")
