@@ -139,3 +139,30 @@ Retrieve information for a given news video.
 
 
     api.news_video.get("40393187")
+
+
+### Page
+
+##### Page list
+
+A list of all pages.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| page_id  | The news page’s ID.  | optional |
+| top  | Filters the number of records in the returned result set.  | optional |
+| skip  | Skip the desired record from the result set.  | optional |
+
+
+    api.page.all()
+
+##### Page get
+
+Retrieve information for a given news video.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| news_video_id  | The news video’s ID.  | required |
+
+
+    api.page.get("5581488665345c152c269bc0")
