@@ -4,6 +4,7 @@ from hurriyet.news_photo_gallery import NewsPhotoGallery
 from hurriyet.news_video import NewsVideo
 from hurriyet.page import Page
 from hurriyet.path import Path
+from hurriyet.search import Search
 from hurriyet.writer import Writer
 
 
@@ -107,3 +108,18 @@ class Api(object):
         get     : Single writer.
         """
         return Writer(api=self)
+
+    @property
+    def search(self):
+        """
+        Hurriyet Writer Operations
+
+        Available methods:
+
+        article                 : Search article with keyword.
+        column                  : Search column with keyword.
+        folder                  : Search folder with keyword.
+        news_photo_gallery      : Search news photo gallery with keyword.
+        page                    : Search page with keyword.
+        """
+        return Search(api=self)
