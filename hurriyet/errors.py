@@ -59,3 +59,7 @@ class FolderNotFound(NotFound):
 
 class PathNotFound(NotFound):
     message = six.text_type(u"Path Not Found")
+
+
+class WriterNotFound(NotFound):
+    message = six.text_type(u"Writer Not Found")

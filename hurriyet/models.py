@@ -159,3 +159,19 @@ class Path(Model):
     def __init__(self, **kwargs):
         super(Path, self).__init__(**kwargs)
         self._repr_values = {"id": "ID", "title": "Title"}
+
+
+class Writer(Model):
+    _not_found_error_class = errors.WriterNotFound
+
+    def __init__(self, **kwargs):
+        super(Writer, self).__init__(**kwargs)
+        self._repr_values = {"id": "ID", "fullname": "Name"}
+
+    @classmethod
+    def parse(cls, data, sub_item=False):
+        writer = super(Writer, cls).parse(data, sub_item=sub_item)
+        if hasattr(writer, "files"):
+            writer.files = File.parse_list(writer.files, sub_item=True)
+
+        return writer

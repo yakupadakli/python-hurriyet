@@ -4,6 +4,7 @@ from hurriyet.news_photo_gallery import NewsPhotoGallery
 from hurriyet.news_video import NewsVideo
 from hurriyet.page import Page
 from hurriyet.path import Path
+from hurriyet.writer import Writer
 
 
 class Api(object):
@@ -94,3 +95,15 @@ class Api(object):
         get     : Single page.
         """
         return Path(api=self)
+
+    @property
+    def writer(self):
+        """
+        Hurriyet Writer Operations
+
+        Available methods:
+
+        all     : All writers.
+        get     : Single writer.
+        """
+        return Writer(api=self)
