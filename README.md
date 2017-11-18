@@ -220,3 +220,61 @@ Retrieve information for a given writer.
 
 
     api.writer.get("57a8a3430f25441fb419c54a")
+
+
+### Search
+
+##### Search article
+
+Retrieve articles for a given keyword.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| keyword  | Keyword.  | required |
+
+
+    api.search.article("hurriyet")
+
+##### Search column
+
+Retrieve columns for a given keyword.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| keyword  | Keyword.  | required |
+
+
+    api.search.column("hurriyet")
+
+##### Search folder
+
+Retrieve folders for a given keyword.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| keyword  | Keyword.  | required |
+
+
+    api.search.folder("hurriyet")
+
+##### Search news photo gallery
+
+Retrieve news photo galleries for a given keyword.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| keyword  | Keyword.  | required |
+
+
+    api.search.news_photo_gallery("hurriyet")
+
+##### Search page
+
+Retrieve pages for a given keyword.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| keyword  | Keyword.  | required |
+
+
+    api.search.page("hurriyet")
