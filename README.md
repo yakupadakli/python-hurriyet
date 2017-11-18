@@ -149,7 +149,7 @@ A list of all pages.
 
 | param  | Description |  |
 | ------------- | ------------- | ------------- |
-| page_id  | The news page’s ID.  | optional |
+| page_id  | The page’s ID.  | optional |
 | top  | Filters the number of records in the returned result set.  | optional |
 | skip  | Skip the desired record from the result set.  | optional |
 
@@ -158,11 +158,38 @@ A list of all pages.
 
 ##### Page get
 
-Retrieve information for a given news video.
+Retrieve information for a given page.
 
 | param  | Description |  |
 | ------------- | ------------- | ------------- |
-| news_video_id  | The news video’s ID.  | required |
+| page_id  | The page’s ID.  | required |
 
 
     api.page.get("5581488665345c152c269bc0")
+
+
+### Path
+
+##### Path list
+
+A list of all paths.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| path_id  | The path’s ID.  | optional |
+| top  | Filters the number of records in the returned result set.  | optional |
+| skip  | Skip the desired record from the result set.  | optional |
+
+
+    api.path.all()
+
+##### Path get
+
+Retrieve information for a given path.
+
+| param  | Description |  |
+| ------------- | ------------- | ------------- |
+| path_id  | The path’s ID.  | required |
+
+
+    api.path.get("563cddcc67b0a934e44ee2d7")
