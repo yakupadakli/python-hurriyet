@@ -1,4 +1,5 @@
 *.pyc
 
 .idea/
-
+python_hurriyet.egg-info/
+dist/
